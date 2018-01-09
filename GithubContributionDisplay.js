@@ -14,7 +14,7 @@ var color = d3.scale.ordinal().range(["limegreen", "steelblue"]);
 var partition = d3.layout.partition().value(function(d) { return d.size; });
 
 var API_HOME = "https://api.github.com";
-var GIT_HUB_USER_NAME = "codingtwinky";
+var GIT_HUB_USER_NAME = "jung-kim";
 
 var contributionDisplay = function() {
   d3.select("#contributions").select("svg").remove();
