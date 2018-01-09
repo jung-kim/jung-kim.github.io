@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name='description' content='About JK Kim' />
+  <meta name='keywords' content='jk kim, jk, kim, open source, github, java, javascript, developer, programmer' />
+  <meta property='og:title' content='JK Kim | @CodingTwinky' />
+  <meta property='og:description' content='About JK Kim | CodingTwinky' />
+  <meta property='og:site_name' content='JK Kim | @CodingTwinky' />
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no; target-densityDpi=device-dpi" />
+  <title>JK Kim | @CodingTwinky</title>
+
+  <link rel='icon' href='t.ico' type='image/x-icon' />
+  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='styles.css'>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js'></script>
+  <script src='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js' charset="utf-8"></script>
+  <script src='GithubContributionDisplay.js'></script>
+  <script type='text/javascript'>
+    var ANIMATE_OFFSET = 450;
+    $(function() {
+      contributionDisplay();
+
+      $(".add-popover").popover();
+
+      $('#gg-work').click(function() {
+        $('#work').css('background-image', 'url(goguardian.png)');
+      });
+
+      $('#yahoo-work').click(function() {
+        $('#work').css('background-image', 'url(yahoo.jpg)');
+      });
+
+      $('#gs-work').click(function() {
+        $('#work').css('background-image', 'url(gs.jpg)');
+      });
+
+      $('#sungard-work').click(function() {
+        $('#work').css('background-image', 'url(sungard.jpg)');
+      });
+
+      $('#baylor-work').click(function() {
+        $('#work').css('background-image', 'url(bu_seal.jpg)');
+      });
+
+      $('.animate-in').addClass('pre-animation');
+
+      var elementsToAnimate = $('.pre-animation');
+
+      var onScroll = function() {
+        var yOffSet = window.pageYOffset;
+        elementsToAnimate.each(function(index, element) {
+          var jsElement = $(element);
+          if (typeof jsElement.offset() !== 'undefined' && yOffSet + ANIMATE_OFFSET > jsElement.offset().top) {
+            $('.animate-in').removeClass('pre-animation');
+            elementsToAnimate.splice(index,1);
+          }
+        });
+      };
+
+      window.onscroll = onScroll;
+      onScroll();
+    });
+  </script>
+</head>
+<body>
+  <div id='intro'>
+    <div class='container'>
+      <h1 class='greet'>Hello!</h1>
+       <div class='who-am-i'>
+         My name is JK Kim<br/>
+         <br/>
+         <br/>
+          And this is about what I do!<br/><br/>
+          <span class='subtle'>[well, some of what I do as I can't share proprietary stuffs]</span>
+        </div>
+      </div>
+      <div class='intro-bottom-border'></div>
+    </div>
+  </div>
+
+  <div id='do'>
+    <div class='container'>
+      <div class='content'>
+        There are many things I do, but I love to puzzle together sequences of symbols that computers can read!
+      </div>
+    </div>
+    <img class='front-image animate-in' src='serenedi_code.png'></img>
+    <img class='left-image animate-in' src='git_diff.jpg'></img>
+    <img class='right-image animate-in' src='serenedi_jade.jpg'></img>
+    <div class="back-image-container">
+      <img class='back-image animate-in' src='serenedi.jpg'></img>
+    </div>
+    <div class='bottom-border'></div>
+  </div>
+
+  <div id='believe'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-sm-6'>
+          <div class='flip-container swing'  ontouchstart='this.classList.toggle('hover');'>
+            <div class='flipper'>
+              <div class='front'>
+                <p>
+                  These are some of the technologies that I love and work with!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='col-sm-6'>
+          <div class='flip-container' ontouchstart='this.classList.toggle('hover');'>
+            <div class='flipper'>
+              <div class='front' style='background: url(js.jpg) 0 0 no-repeat;'>
+              </div>
+              <div class='back'>
+                <p>Honestly, JS is not my forte, but most of my free time is spent on JS projects at GitHub as it is what I love and believe.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class='col-sm-6'>
+          <div class='flip-container' ontouchstart='this.classList.toggle('hover');'>
+            <div class='flipper'>
+              <div class='front' style='background: url(java.png) 0 0 no-repeat;'>
+              </div>
+              <div class='back'>
+                <p>Java has been my bread and butter.  I have worked on various J2EE based stock trading and financial applications most of my life.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='col-sm-6'>
+          <div class='flip-container' ontouchstart='this.classList.toggle('hover');'>
+            <div class='flipper'>
+              <div class='front' style='background: #ffffff url(html5.jpg) no-repeat center center;'>
+              </div>
+              <div class='back'>
+                <p>HTML5 is cool!  <br/><br/>At least so I have been told...  But it is fun!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class='col-sm-6'>
+          <div class='flip-container' ontouchstart='this.classList.toggle('hover');'>
+            <div class='flipper'>
+              <div class='front' style='background: #ffffff url(spark.png) no-repeat center center;'>
+              </div>
+              <div class='back'>
+                <p>Apache Spark has been challenging but it opened many possibilities.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='col-sm-6'>
+          <div class='flip-container' ontouchstart='this.classList.toggle('hover');'>
+            <div class='flipper'>
+              <div class='front' style='background: #ffffff url(scala.jpeg) no-repeat center center;'>
+              </div>
+              <div class='back'>
+                <p>Functional programing is one of my best friend!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id='work'>
+    <div class='topBorder'>
+    </div>
+    <div class='work-content container'>
+      <span class='accent negative-gradient'>Where I work... </span>
+      <div class='panel-group' id='accordion'>
+        <div class='panel panel-default'>
+            <div class='panel-heading'>
+              <h4 class='panel-title'>
+                <a id='gg-work'  data-toggle='collapse' data-parent='#accordion' href='#collapse-five'>
+                    GoGuardian
+                </a>
+              </h4>
+            </div>
+          <div id='collapse-five' class='panel-collapse in collapse'>
+            <div class='panel-body'>
+              <p>Doing a startup thing in a startup as a startup employee.  I still don't know what I'm doing but I have a feeling that they want me to work with big data and machine learning via writing some codes for them...</p>
+            </div>
+          </div>
+        </div>
+        <div class='panel panel-default'>
+            <div class='panel-heading'>
+              <h4 class='panel-title'>
+                <a id='yahoo-work'  data-toggle='collapse' data-parent='#accordion' href='#collapse-four'>
+                    Yahoo
+                </a>
+              </h4>
+            </div>
+          <div id='collapse-four' class='panel-collapse collapse height'>
+            <div class='panel-body'>
+              <p>During the day, I write codes to test and maintain scalability, stability and correctness of the <a href="http://www.slideshare.net/MessagingMeetup/cloud-messaging-service-technical-overview">Cloud Messaging System</a> working with Zookeeper, Bookkeepr, ActiveMQ and other fun technologies.  Which means I have no idea what I'm doing but I'm learning and it is so much fun!</p>
+            </div>
+          </div>
+        </div>
+        <div class='panel panel-default'>
+            <div class='panel-heading'>
+              <h4 class='panel-title'>
+                <a id='gs-work'  data-toggle='collapse' data-parent='#accordion' href='#collapse-three'>
+                    Goldman Sachs
+                </a>
+              </h4>
+            </div>
+          <div id='collapse-three' class='panel-collapse collapse height'>
+            <div class='panel-body'>
+              <p>As a member of Regulatory Technology member, I wrote softwares for stock traders and risk analysts to monitor trading activities of Goldman Sachs so they could be in compliance with various financial regulations such as FED, PRA, Dodd Frank and more.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class='panel panel-default'>
+            <div class='panel-heading'>
+              <h4 class='panel-title'>
+                <a id='sungard-work' data-toggle='collapse' data-parent='#accordion' href='#collapse-two'>
+                    SunGard
+                </a>
+              </h4>
+            </div>
+          <div id='collapse-two' class='panel-collapse collapse height'>
+            <div class='panel-body'>
+              <p>It was my plan to go to graduate school but SunGard drafted me out of college so I could be a Senior Consultant to write financial software solutions for SunGard's clients.</p>
+            </div>
+          </div>
+        </div>
+
+          <div class='panel panel-default'>
+            <div class='panel-heading'>
+              <h4 class='panel-title'>
+                <a id='baylor-work' data-trigger='hover' data-toggle='collapse' data-parent='#accordion' href='#collapse-one'>
+                    Baylor University
+                </a>
+              </h4>
+            </div>
+          <div id='collapse-one' class='panel-collapse collapse height'>
+            <div class='panel-body'>
+              <p>While attending Baylor University, I also interned with Engineering and Computer Science department of Baylor to write softwares to maintain and control a cluster of computers. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='bottom-border'></div>
+  </div>
+
+  <div id='github'>
+    <div class='container'>
+      <span class='accent'>I'm active on <a href='http://github.com/jk-kim'>Github</a>!</span>
+      <div class='github-interactive'>
+        <h2>Interactive GitHub Contribution Graph</h2>
+        <ul class='subtle'>
+          <li>Click on project/user to see what has been worked on</li>
+          <li>Click on empty background to move back up</li>
+        </ul>
+      </div>
+    </div>
+    <div id='contributions' class='d3-container'></div>
+  </div>
+
+  <div id='contact'>
+    <div class='topBorder'></div>
+    <div class='container' class='ease-in'>
+      <div class='contact-body'>
+        <div class='portrait'></div>
+        When I am not working, I enjoy rugby, cycling, <a href='https://jk-kim.github.io/site'>photography</a> and the company of my friends at a local pub.
+        <br/>
+        <br/>
+        Cheers!
+        <br/>
+        <br/>
+      </div>
+    </div>
+  </div>
+
+  <div class='footer'>
+    <div class='icon-container'>
+      <div class='icons'>
+        <a href="mailto:jk@jk-kim.com" data-content="Email!" rel="popover" data-placement="top" data-trigger="hover" class="add-popover email" data-original-title="" title=""></a>
+      </div>
+      <div class='icons'>
+        <a href="http://www.linkedin.com/pub/jk-jung-kim/37/776/b40" data-content="LinkedIn!" rel="popover" data-placement="top" data-trigger="hover" class="add-popover linkedin" data-original-title="" title=""></a>
+      </div>
+      <div class='icons'>
+        <a href="http://github.com/jung-kim" data-content="Github!" rel="popover" data-placement="top" data-trigger="hover" class="add-popover github" data-original-title="" title=""></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
